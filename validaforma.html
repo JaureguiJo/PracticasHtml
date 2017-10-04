@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+        <title>Mi primer blog</title>
+        
+    </head>
+    <body>
+        <div>
+            <form id="myform" action="" method="post">
+                <input type="text" name="nombre" required="true" placeholder="Nombre" /><br><br>
+                <input type="tel" name="telefono" required="true" placeholder="format: (xxx) xx-xx-xxx" id="tel_" /><br><br>
+                <input type="email" name="mail" required="true" placeholder="a@a.com" /><br><br>
+                <input type="password" name="psw" required="true" placeholder="*****" /><br><br>
+                <input type="checkbox" id="check" required="true" value="Acepto">Aceptar terminos<br><br>
+
+                <button id="boton" onclick="serializar()" >Click</button>
+            </form>
+
+            <script>
+                function serializar()
+                {
+                    
+                        var text = "";
+
+                        if($('#check').is(':checked')){
+                            
+                            text = $('#myform').serializeJSON();
+                            if (text.nombre == "" || text.telefono == "" || text.email == "" || text.password == "") {
+                                alert("LLene los campo obligatorios");
+                            }
+                            else{
+                                console.log(text);
+                                alert(text.nombre +"\n"+ text.telefono +"\n"+ text.email +"\n"+ text.password);      
+                            }
+                        }
+                        else{
+                            alert("Acepte los terminos");
+                        }
+
+                        
+                                 
+                }
+            </script>
+        </div>
+    </body>
+</html>
+
