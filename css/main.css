@@ -1,0 +1,26 @@
+body{
+	background-color: #6A7239;
+}
+
+h1, h2{
+	color: #7995F1;
+}
+
+i{
+	color: white;
+}
+
+li{
+	color: white;
+}
+
+img{
+	width: 30%;
+	height: 200px;
+}
+
+a{
+	color: red;
+}
+
+p{color: white}
